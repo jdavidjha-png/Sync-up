@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SyncUp - Find Time Together</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c4c0ff",
+                        "secondary-container": "#fd6483",
+                        "surface-container-low": "#f6f2ff",
+                        "surface-tint": "#4f44e2",
+                        "on-primary-fixed": "#100069",
+                        "surface-container-high": "#eae6f3",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf8ff",
+                        "surface-container": "#f0ecf9",
+                        "secondary-fixed": "#ffd9dd",
+                        "on-background": "#1b1b24",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3effc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed-dim": "#ffb2bc",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c4c0ff",
+                        "tertiary-container": "#00855e",
+                        "tertiary": "#00694a",
+                        "inverse-surface": "#302f39",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1b24",
+                        "primary": "#6C63FF",
+                        "on-secondary-fixed-variant": "#8f0935",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#6cfbc2",
+                        "tertiary-fixed-dim": "#4adea7",
+                        "on-secondary-container": "#670023",
+                        "primary-container": "#6C63FF",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#400012",
+                        "secondary": "#FF6584",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#f5fff7",
+                        "outline-variant": "#c7c4d8",
+                        "surface-dim": "#dcd8e5",
+                        "outline": "#777587",
+                        "on-surface-variant": "#464555",
+                        "on-tertiary-fixed-variant": "#005138",
+                        "background": "#fcf8ff",
+                        "on-primary-fixed-variant": "#3622ca",
+                        "surface-bright": "#fcf8ff",
+                        "on-tertiary-fixed": "#002114",
+                        "surface-container-highest": "#e4e1ee",
+                        "primary-fixed": "#e3dfff",
+                        "surface-variant": "#e4e1ee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "14px",
+                        "xl": "20px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "margin": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "h2": ["Inter"],
+                        "manrope": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body": ["15px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "h2": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf8ff;
+            font-family: 'Inter', sans-serif;
+        }
+        .bento-glow {
+            background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.05), transparent);
+        }
+    </style>
+</head>
+<body class="font-body text-on-background selection:bg-primary-fixed">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#fcf8ff]/80 backdrop-blur-md antialiased docked full-width top-0 border-none flex justify-between items-center w-full px-margin h-16 fixed z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="text-xl font-extrabold tracking-tight text-primary">SyncUp</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-semibold text-label" href="#">Login</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label" href="#">Join SyncUp</a>
+</nav>
+<button class="text-primary text-label font-semibold hover:opacity-80 transition-opacity active:scale-95 transition-transform">Skip</button>
+</div>
+</header>
+<main class="min-h-screen pt-24 pb-12 px-margin flex flex-col items-center justify-center bento-glow">
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Side: Hero Branding & Social Proof -->
+<div class="lg:col-span-7 space-y-xl text-center lg:text-left pr-0 lg:pr-12">
+<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-md py-xs rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label uppercase tracking-wider text-[11px] font-bold">Collective Scheduling</span>
+</div>
+<h1 class="font-h1 text-h1 md:text-4xl text-on-surface leading-tight">
+                    Find time together,<br/>
+<span class="text-primary">without the back-and-forth.</span>
+</h1>
+<p class="font-body text-body text-on-surface-variant max-w-xl mx-auto lg:mx-0">
+                    The premium scheduling engine for high-performance teams. Sync your calendars, identify overlaps, and lock in meetings effortlessly.
+                </p>
+<!-- Visual Bento Element -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md pt-xl">
+<div class="bg-white p-md rounded-xl shadow-[0px_4px_20px_rgba(108,99,255,0.05)] border border-surface-container">
+<div class="flex -space-x-2 mb-sm">
+<img alt="User" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdmLT42rS3vR5Fs9MdRgLKGv8qWgJ8K0ezXvXliIGwd0V4J2QHtiXzL5ILS0Zo1hog-YKQ8q1wG1q9hU81pItHqm_VUcSzFxA7sRSFG8OrpRb4NWrDGjbJuk2AQTrGwrcKFVu7fkytFBjw9S439sO1hJgtRZLMunF8RXFGNmD0nq5VpygDu-qH5N-hzUnZ71P5aobCc6iQkpUF-_GizI39mMeHE68zemmYDsI6o41_KcdwYfyNCTNpxAmJW7gGuNk3mZ7ozKZdyog"/>
+<img alt="User" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7OJi8jPAWk1nOWP4PFhv-FDx1VZYIlN8-DmbEBAftFAQTnZ9zoy3bDejeFjNpgD4RrjNETGgXIzXaREWjTRkyZUPciYBMn8MWrlmT97HzqKzQz8JSe85RJ6AFQxNNzF55v3TOlYUtCrMslzbqZEf91KFTcSqUQmT6R9BvAQg_mnuLVIJXyvelNP9wDBscjHihiIT6MoWkeARmUeD4ATKaXWVGM1ZqckJevXrB1HlOxDHiauqcHYMNyYM7ZGwr9emrnfZs4vMQhFw"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-secondary flex items-center justify-center text-[10px] text-white font-bold">+12</div>
+</div>
+<span class="font-label text-on-surface-variant text-[12px]">Active Sync</span>
+</div>
+<div class="bg-white p-md rounded-xl shadow-[0px_4px_20px_rgba(108,99,255,0.05)] border border-surface-container flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+<span class="font-label text-on-surface-variant text-[12px]">98% Match Rate</span>
+</div>
+<div class="hidden md:block bg-white p-md rounded-xl shadow-[0px_4px_20px_rgba(108,99,255,0.05)] border border-surface-container">
+<span class="material-symbols-outlined text-primary mb-xs" data-icon="verified_user">verified_user</span>
+<div class="font-label text-on-surface-variant text-[12px]">Secure &amp; Private</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Auth Card -->
+<div class="lg:col-span-5 w-full">
+<div class="bg-white p-lg md:p-xl rounded-xl shadow-[0px_10px_30px_rgba(108,99,255,0.08)] border border-surface-container">
+<div class="mb-xl">
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Welcome back</h2>
+<p class="font-body text-on-surface-variant">Please enter your details to sign in.</p>
+</div>
+<!-- Primary Action: Google Auth -->
+<button class="w-full flex items-center justify-center gap-3 bg-white border border-outline-variant py-3 px-md rounded-lg font-label text-on-surface hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-200 mb-lg">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                        Continue with Google
+                    </button>
+<div class="relative flex items-center justify-center mb-lg">
+<div class="border-t border-surface-container w-full absolute"></div>
+<span class="bg-white px-md text-[11px] text-outline font-bold relative uppercase tracking-widest">or</span>
+</div>
+<!-- Secondary Action: Email Fields -->
+<form class="space-y-md" onsubmit="return false;">
+<div class="space-y-sm">
+<label class="block font-label text-on-surface" for="email">Email Address</label>
+<input class="w-full px-md py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none font-body" id="email" placeholder="name@company.com" type="email"/>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<label class="block font-label text-on-surface" for="password">Password</label>
+<a class="text-[12px] font-semibold text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="w-full px-md py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none font-body" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-outline" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-lg font-label font-bold hover:opacity-90 transition-all active:scale-[0.98] duration-200 mt-sm shadow-lg shadow-primary/20">
+                            Sign In
+                        </button>
+</form>
+<p class="mt-xl text-center font-body text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="text-primary font-bold hover:underline" href="#">Create an account</a>
+</p>
+</div>
+<!-- Subtle Trust Element -->
+<p class="text-center mt-lg text-[10px] text-outline font-bold uppercase tracking-[0.2em]">
+                    Enterprise Grade Security &amp; Encryption
+                </p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 py-6 mb-safe bg-white/90 backdrop-blur-lg rounded-t-xl border-t border-surface-container shadow-[0px_-10px_40px_rgba(108,99,255,0.05)] md:hidden">
+<a class="flex items-center justify-center text-on-surface-variant px-6 py-3 font-semibold text-sm hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mr-2 text-[20px]" data-icon="arrow_back">arrow_back</span>
+            Back
+        </a>
+<a class="flex items-center justify-center bg-primary text-white rounded-lg px-6 py-3 font-bold text-sm transform active:scale-95 duration-200 shadow-md shadow-primary/10" href="#">
+            Next
+            <span class="material-symbols-outlined ml-2 text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</nav>
+<!-- Visual Background Elements -->
+<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] blur-[120px] bg-primary/10 rounded-full"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-[400px] h-[400px] blur-[100px] bg-secondary/10 rounded-full"></div>
+</body></html>
